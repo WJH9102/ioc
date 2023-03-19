@@ -2,7 +2,11 @@ package com.github.houbb.ioc.test.config;
 
 import com.github.houbb.ioc.annotation.Bean;
 import com.github.houbb.ioc.annotation.Configuration;
+import com.github.houbb.ioc.annotation.Lazy;
+import com.github.houbb.ioc.annotation.Scope;
+import com.github.houbb.ioc.constant.ScopeConst;
 import com.github.houbb.ioc.test.model.Book;
+import com.github.houbb.ioc.test.model.Parent;
 import com.github.houbb.ioc.test.model.User;
 import com.github.houbb.ioc.test.service.WeightApple;
 
@@ -17,14 +21,22 @@ import com.github.houbb.ioc.test.service.WeightApple;
 public class AppBeanRefConfig {
 
     @Bean
-    public Book book() {
-        Book book = new Book();
+    @Lazy(value = true)
+    public Parent book1() {
+        Parent book = new Book();
         book.setName("《海底两万里》");
         return book;
     }
 
     @Bean
-    public User user(final Book book) {
+    public Parent book2() {
+        Parent book = new Book();
+        book.setName("《三国演义》");
+        return book;
+    }
+
+    @Bean
+    public User user(final Parent book) {
         User user = new User();
         user.setName("Hello");
         user.setBook(book);

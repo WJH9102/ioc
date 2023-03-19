@@ -6,15 +6,15 @@ package com.github.houbb.ioc.test.model;
  */
 public class User {
 
-    private Book book;
+    private Parent book;
 
     private String name;
 
-    public Book getBook() {
+    public Parent getBook() {
         return book;
     }
 
-    public void setBook(Book book) {
+    public void setBook(Parent book) {
         this.book = book;
     }
 

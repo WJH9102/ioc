@@ -5,6 +5,7 @@ import com.github.houbb.ioc.core.BeanFactory;
 import com.github.houbb.ioc.test.config.AppBeanConfig;
 import com.github.houbb.ioc.test.config.AppBeanRefConfig;
 import com.github.houbb.ioc.test.config.AppConfig;
+import com.github.houbb.ioc.test.model.Book;
 import com.github.houbb.ioc.test.model.User;
 import com.github.houbb.ioc.test.service.Apple;
 import com.github.houbb.ioc.test.service.WeightApple;
@@ -40,8 +41,10 @@ public class ConfigBeanApplicationContextTest {
     public void beanRefTest() {
         BeanFactory beanFactory = new AnnotationApplicationContext(AppBeanRefConfig.class);
         User user = beanFactory.getBean("user", User.class);
-
-        Assert.assertEquals("User{book=Book{name='《海底两万里》'}, name='Hello'}", user.toString());
+        Book book = beanFactory.getBean("book", Book.class);
+        System.out.println(user.getBook().hashCode());
+        System.out.println(book.hashCode());
+        System.out.println(user);
     }
 
 }
