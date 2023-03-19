@@ -3,6 +3,7 @@ package com.github.houbb.ioc.test.context;
 import com.github.houbb.ioc.context.AnnotationApplicationContext;
 import com.github.houbb.ioc.core.BeanFactory;
 import com.github.houbb.ioc.test.config.AppImportConfig;
+import com.github.houbb.ioc.test.service.Apple;
 import com.github.houbb.ioc.test.service.WeightApple;
 import org.junit.Assert;
 import org.junit.Test;
@@ -24,7 +25,8 @@ public class ConfigImportAppCtxTest {
     public void importTest() {
         BeanFactory beanFactory = new AnnotationApplicationContext(AppImportConfig.class);
         WeightApple weightApple = beanFactory.getBean("weightApple", WeightApple.class);
-
+        Apple apple = beanFactory.getBean("apple", Apple.class);
+        System.out.println(apple);
         Assert.assertEquals("10", weightApple.getWeight());
     }
 

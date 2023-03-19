@@ -2,6 +2,7 @@ package com.github.houbb.ioc.test.config;
 
 import com.github.houbb.ioc.annotation.Bean;
 import com.github.houbb.ioc.annotation.Configuration;
+import com.github.houbb.ioc.annotation.Import;
 import com.github.houbb.ioc.test.service.Apple;
 import com.github.houbb.ioc.test.service.WeightApple;
 
@@ -13,6 +14,10 @@ import com.github.houbb.ioc.test.service.WeightApple;
  * @since 0.1.2
  */
 @Configuration
+/**
+ * Import 也不支持导入普通类
+ */
+@Import(Apple.class)
 public class AppBeanConfig {
 
     @Bean

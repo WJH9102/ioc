@@ -14,6 +14,7 @@ import com.github.houbb.ioc.model.PropertyArgDefinition;
 import com.github.houbb.ioc.support.aware.ApplicationContextAware;
 import com.github.houbb.ioc.support.processor.ApplicationContextPostProcessor;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
