@@ -23,6 +23,7 @@ public class CircleTest {
     public void directCircleTest() {
         final BeanFactory beanFactory = new JsonApplicationContext("circle/direct-circle.json");
         ColorWeightApple apple = beanFactory.getBean("weightApple", ColorWeightApple.class);
+        System.out.println(apple);
     }
 
     /**
@@ -37,6 +38,7 @@ public class CircleTest {
     public void inDirectCircleTest() {
         final BeanFactory beanFactory = new JsonApplicationContext("circle/in-direct-circle.json");
         ColorWeightApple apple = beanFactory.getBean("weightApple", ColorWeightApple.class);
+        System.out.println(apple);
     }
 
 }

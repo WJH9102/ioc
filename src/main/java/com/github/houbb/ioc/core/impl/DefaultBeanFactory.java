@@ -294,6 +294,7 @@ public class DefaultBeanFactory implements BeanFactory, DisposableBean {
         final String beanName = beanDefinition.getName();
         //1.1 检测是否存在循环依赖
         if(dependsCheckService.isCircleRef(beanName)) {
+            System.out.println("循环依赖");
             throw new IocRuntimeException(beanName + " has circle reference.");
         }
 
